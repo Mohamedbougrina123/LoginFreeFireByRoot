@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GET DATA LOGIN</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #000000, #1a0033);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #ff3333;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+            width: 450px;
+        }
+
+        .data {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .line-decoration {
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff3333, #ff9900, #ff3333, transparent);
+            margin: 10px 0;
+            box-shadow: 0 0 10px #ff3333;
+        }
+
+        input[type="text"] {
+            border: 2px solid #ff3333;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 12px 20px;
+            width: 100%;
+            border-radius: 25px;
+            color: #adff2f;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(255, 51, 51, 0.3);
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #ff9900;
+            box-shadow: 0 0 25px #ff9900;
+            transform: scale(1.02);
+        }
+
+        input[type="text"]::placeholder {
+            color: rgba(173, 255, 47, 0.7);
+            font-style: italic;
+        }
+
+        #btn {
+            width: 100%;
+            background: linear-gradient(45deg, #0066ff, #0099ff);
+            color: #adff2f;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: none;
+            margin: 10px 0;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 102, 255, 0.5);
+        }
+
+        #btn:hover {
+            background: linear-gradient(45deg, #0099ff, #0066ff);
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px #0099ff;
+            color: #ffffff;
+        }
+
+        #btn:active {
+            transform: translateY(0);
+        }
+
+        #txt {
+            width: 100%;
+            height: 250px;
+            border-radius: 15px;
+            border: 2px solid #ff3333;
+            background: rgba(0, 0, 0, 0.9);
+            color: #adff2f;
+            padding: 15px;
+            font-size: 14px;
+            font-family: 'Courier New', monospace;
+            resize: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(255, 51, 51, 0.3);
+        }
+
+        #txt:focus {
+            outline: none;
+            border-color: #ff9900;
+            box-shadow: 0 0 25px #ff9900;
+        }
+
+        #txt::placeholder {
+            color: rgba(173, 255, 47, 0.7);
+            font-style: italic;
+        }
+
+        h2 {
+            color: #ff3333;
+            text-align: center;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #ff3333;
+            letter-spacing: 3px;
+        }
+
+        .token-display {
+            color: #ff9900;
+            font-size: 12px;
+            margin-top: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>⚡ GET DATA LOGIN ⚡</h2>
+        <div class="line-decoration"></div>
+        
+        <form action="/getdata" method="POST">
+            <div class="data">
+                <input type="text" name="token" id="token" placeholder="Enter Token" required>
+                <br>
+                <button type="submit" id="btn"> Get Data Login</button>
+                
+                <textarea name="txt" id="txt" cols="30" rows="10" placeholder="📝 Response Data ...">{% if response %}{{ response }}{% else %}# انتظر ادخال التوكن وسيتم عرض البيانات هنا{% endif %}</textarea>
+          
+            </div>
+        </form>
+        
+        <div class="line-decoration"></div>
+        <small style="color: #666; display: block; text-align: center; margin-top: 10px;">⚡ BY MOHAMED BOUGRINA ⚡</small>
+    </div>
+</body>
+</html>
